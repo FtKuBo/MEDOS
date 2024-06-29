@@ -1,36 +1,24 @@
-%define ALIGN 1<<0
-%define MEMINFO 1<<1
-%define FLAGS ALIGN | MEMINFO
-%define MAGIC 0x1BADB002
-%define CHECKSUM -(MAGIC-FLAGS)
-
-section .multiboot
-
-align 4
-DD MAGIC
-DD FLAGS
-DD CHECKSUM
-
-
-section .bss
-
-align 16
-stack_bottom:
-    RESB 16384
-stack_top:
-
+BITS 32
 
 section .text
+    ALIGN 4
+    DD 0x1BADB002
+    DD 0x00000000
+    DD -(0x1BADB002 + 0x00000000)
 
-global _start
-_start:
-    MOV esp, stack_top
+global start
+extern kmain
 
-    ; LOAD THE GDT HERE
+start:
+    CLI
+    MOV esp, stack_space
+    CALL kmain
+    HLT
+HaltKernel:
+    CLI
+    HLT
+    JMP HaltKernel
 
-    CALL kernel_main
-
-halt:
-    hlt
-    jmp halt
-
+section .bss
+RESB 8192
+stack_space:
