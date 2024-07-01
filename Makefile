@@ -1,4 +1,4 @@
-CFLAGS = -m32 -fno-stack-protector -fno-builtin
+CFLAGS = -g -m32 -fno-stack-protector -fno-builtin
 
 all: clean kernel boot image visual
 
