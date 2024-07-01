@@ -1,9 +1,12 @@
 #include "vga.h"
+#include "gdt/gdt.h"
 
 
 void kernel_main(void);
 
 void kernel_main(void){
     reset();
-    print("Hello Habibi!");
+
+    initGdt();
+    print("GDT is initialized !\n");
 }
