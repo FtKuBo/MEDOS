@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "gdt.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

@@ -20,3 +20,11 @@ gdtFlush:
 
 .flush:
     RET
+
+
+global tssFlush
+
+tssFlush:
+    MOV ax, 0x2B
+    LTR ax
+    RET

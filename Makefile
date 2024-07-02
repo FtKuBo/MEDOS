@@ -9,6 +9,7 @@ kernel:
 	gcc $(CFLAGS) -c src/kernel.c -o kernel.o
 	gcc $(CFLAGS) -c src/vga.c -o vga.o
 	gcc $(CFLAGS) -c src/gdt/gdt.c -o gdt.o
+	gcc $(CFLAGS) -c src/utils/util.c -o util.o
 
 
 boot:
@@ -16,7 +17,7 @@ boot:
 	nasm -f elf32 src/gdt/gdt.s -o gdts.o
 
 image:
-	ld -m elf_i386 -T linker.ld -o kernel boot.o kernel.o vga.o gdt.o gdts.o
+	ld -m elf_i386 -T linker.ld -o kernel boot.o kernel.o vga.o gdt.o gdts.o util.o
 	mv kernel Med/boot/kernel
 	grub-mkrescue -o Med.iso Med/
 	rm *.o
