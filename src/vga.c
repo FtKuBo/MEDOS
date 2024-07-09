@@ -1,4 +1,5 @@
 #include "vga.h"
+#include "stdint.h"
 
 uint16_t column = 0;
 uint16_t line = 0;

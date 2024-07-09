@@ -1,6 +1,5 @@
 global gdtFlush
 
-
 ;This function is responsible for loading the gdt
 ;
 gdtFlush:

@@ -1,6 +1,8 @@
 #include "gdt.h"
+#include "../utils/util.h"
 
 extern void gdtFlush(uint32_t);
+extern void tssFlush();
 
 struct gdt_entry_structer gdt_entries[6];
 struct pointer_structer gdt_ptr;
