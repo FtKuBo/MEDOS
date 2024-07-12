@@ -7,10 +7,10 @@ void kernel_main(void);
 
 void kernel_main(void){
     reset();
-
     initGdt();
     print("GDT is initialized !\n");
     initIdt();
-    print(1/0);
+    print("IDT is initialized !\n");
+    
 
 }
