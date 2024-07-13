@@ -21,6 +21,8 @@ void initIdt();
 void setIdtGate(int8_t num, uint32_t base, uint16_t selector, uint8_t flags);
 
 void isr_handler(struct InterruptRegisters* regs);
+void irq_install_handler (int irq, void (*handler)(struct InterruptRegisters *r));
+
 
 
 extern void isr0();
