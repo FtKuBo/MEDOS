@@ -16,13 +16,14 @@ kernel:
 	$(gcc) $(CFLAGS) -c src/interrupts/idt.c -o idt.o
 	$(gcc) $(CFLAGS) -c src/pit/timer.c -o timer.o
 	$(gcc) $(CFLAGS) -c src/keyboard/keyboard.c -o keyboard.o
+	$(gcc) $(CFLAGS) -c src/memory/memory.c -o memory.o
 
 boot:
 	nasm -f elf32 src/boot.s -o boot.o
 	nasm -f elf32 src/gdt/gdt.s -o gdts.o
 	nasm -f elf32 src/interrupts/idt.s -o idts.o
 image:
-	$(ld) -T linker.ld -o kernel boot.o kernel.o vga.o stdio.o gdt.o gdts.o util.o idt.o idts.o timer.o keyboard.o
+	$(ld) -T linker.ld -o kernel boot.o kernel.o vga.o stdio.o gdt.o gdts.o util.o idt.o idts.o timer.o keyboard.o memory.o
 	mv kernel Med/boot/kernel
 	grub-mkrescue -o kernel.iso Med/
 	rm *.o

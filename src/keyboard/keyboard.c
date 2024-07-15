@@ -119,6 +119,4 @@ void keyboardHandler(struct InterruptRegisters  *regs){
                 }
             }
     }
-
-    //printf("scan code: %d, Press: %d\r\n", scanCode, press);
 }
