@@ -18,7 +18,7 @@ void kernel_main(uint32_t magic, struct multiboot_info* bootInfo){
     print("IDT is initialized !\n");
     initTimer();
     initKeyboard();
-    initMemory(bootInfo);
+    //initMemory(bootInfo);
     
     
     
