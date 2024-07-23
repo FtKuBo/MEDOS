@@ -1,8 +1,6 @@
 #include "../utils/util.h"
 #pragma once
 
-
-
 struct idt_entry_structer{
     uint16_t base_low;
     uint16_t selector;

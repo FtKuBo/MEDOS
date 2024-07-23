@@ -2,7 +2,7 @@ gcc=/usr/opt/cross/bin/i686-elf-gcc
 ld=/usr/opt/cross/bin/i686-elf-ld
 CFLAGS = -ffreestanding -g
 
-all: clean kernel boot image visual
+all: clean kernel boot image visual_bochs
 
 clean:
 	rm -rf *.o
@@ -28,6 +28,9 @@ image:
 	grub-mkrescue -o kernel.iso Med/
 	rm *.o
 
-visual:
+visual_bochs:
+	bochs -f bochs
+
+visual_qemu:
 	qemu-system-i386 kernel.iso
 

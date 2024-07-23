@@ -6,6 +6,8 @@
 #include "stdlib/stdio.h"
 #include "keyboard/keyboard.h"
 #include "memory/memory.h"
+#include "multiboot.h"
+#include "utils/util.h"
 
 
 void kernel_main(uint32_t magic, struct multiboot_info* bootInfo);
@@ -18,7 +20,13 @@ void kernel_main(uint32_t magic, struct multiboot_info* bootInfo){
     print("IDT is initialized !\n");
     initTimer();
     initKeyboard();
-    //initMemory(bootInfo);
+
+    uint32_t mod1 = *(uint32_t*)(bootInfo->mods_addr + 4);
+    uint32_t physicalAllocStart = (mod1 + 0xFFF) & ~0xFFF;
+
+    initMemory(bootInfo->mem_upper * 1024, physicalAllocStart);
+    print("Memory allocation done!");
+
     
     
     

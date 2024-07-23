@@ -1,3 +1,5 @@
+#pragma once
+
 struct multiboot_aout_symbol_table
 {
   uint32_t tabsize;
