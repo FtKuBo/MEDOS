@@ -14,7 +14,7 @@ To compile, link, and run the MEDOS project, follow these steps:
 
 It is preferred that you use a Linux environment.
 
--Install Dependencies: Make sure you have the following tools installed:
+-Install Dependencies:
 
 Cross-compiler
 
@@ -28,6 +28,6 @@ GRUB
 
 Bochs (for simulation)
 
--Adjust Makefile: 
+-Adjustments: 
 
 Modify the Makefile according to the location of your cross-compiler.
