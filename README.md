@@ -11,10 +11,19 @@ Running MEDOS:
 To compile, link, and run the MEDOS project, follow these steps:
 
 Linux Environment: Ensure you are using a Linux environment.
+
 Install Dependencies: Make sure you have the following tools installed:
+
+Cross-compiler
+
 NASM
+
 GCC (GNU Compiler Collection)
+
 LD (GNU Linker)
+
 GRUB
+
 Bochs (for simulation)
+
 Adjust Makefile: Modify the Makefile according to the location of your cross-compiler.
