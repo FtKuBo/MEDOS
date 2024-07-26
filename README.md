@@ -26,4 +26,6 @@ GRUB
 
 Bochs (for simulation)
 
-Adjust Makefile: Modify the Makefile according to the location of your cross-compiler.
+Adjust Makefile: 
+
+Modify the Makefile according to the location of your cross-compiler.
