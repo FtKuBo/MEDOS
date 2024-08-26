@@ -16,17 +16,17 @@ It is preferred that you use a Linux environment.
 
 -Install Dependencies:
 
-Cross-compiler
+.Cross-compiler
 
-NASM
+.NASM
 
-GCC (GNU Compiler Collection)
+.GCC (GNU Compiler Collection)
 
-LD (GNU Linker)
+.LD (GNU Linker)
 
-GRUB
+.GRUB
 
-Bochs (for simulation)
+.Bochs (for simulation)
 
 -Adjustments: 
 
