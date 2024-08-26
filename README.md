@@ -26,7 +26,7 @@ It is preferred that you use a Linux environment.
 
 .LD (GNU Linker)
 
-.GRUB
+.GRUB 
 
 .Bochs (for simulation)
 
