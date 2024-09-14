@@ -8,9 +8,9 @@ MEDOS is an experimental operating system written in C and NASM (x86 assembly) f
 
 Dependencies:
 
-Linux Environment is prefered - Cross-compiler (adjust Makefile) - NASM - GCC (GNU Compiler Collection) - LD (GNU Linker) - GRUB
+Linux Environment is prefered - Cross-compiler (adjust Makefile) - NASM - GCC (GNU Compiler Collection) - LD (GNU Linker) - GRUB - Boshs (simulation)
 
 Run project:
 ```shell
-
+make
 ```
